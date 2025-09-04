@@ -34,13 +34,21 @@ const estilos = StyleSheet.create({
   viewLogo: {
     backgroundColor: "lightgreen",
     flex: 3,
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
   viewBotoes: {
     backgroundColor: "#ffcc80",
     flex: 2,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
   },
   viewRodape: {
     backgroundColor: "#ef9a9a",
     flex: 0.5,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 });
