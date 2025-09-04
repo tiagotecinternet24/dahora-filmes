@@ -5,7 +5,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 export default function App() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView>
+      <SafeAreaView style={{ backgroundColor: "lightgreen", padding: 40 }}>
         <StatusBar style="auto" />
         <View>
           <Text>Dá Hora Filmes</Text>
