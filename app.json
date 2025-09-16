@@ -27,7 +27,8 @@
       "edgeToEdgeEnabled": true
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      "expo-router"
     ]
   }
 }
