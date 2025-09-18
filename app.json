@@ -2,6 +2,7 @@
   "expo": {
     "name": "DáHora Filmes",
     "slug": "dahora-filmes",
+    "scheme": "dahora",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icone.png",
@@ -12,10 +13,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "platforms": [
-      "ios",
-      "android"
-    ],
+    "platforms": ["ios", "android"],
     "ios": {
       "supportsTablet": true
     },
@@ -26,9 +24,6 @@
       },
       "edgeToEdgeEnabled": true
     },
-    "plugins": [
-      "expo-font",
-      "expo-router"
-    ]
+    "plugins": ["expo-font", "expo-router"]
   }
 }
