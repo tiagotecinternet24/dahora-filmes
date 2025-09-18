@@ -1,9 +1,14 @@
+import { Stack } from "expo-router";
 import { View, Text } from "react-native";
 
 export default function Privacidade() {
   return (
-    <View>
-      <Text>privacidade</Text>
-    </View>
+    <>
+      <Stack.Screen
+        options={{
+          headerTitle: "Política de Privacidade",
+        }}
+      />
+    </>
   );
 }
