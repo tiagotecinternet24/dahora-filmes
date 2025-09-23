@@ -28,8 +28,8 @@ export default function Busca() {
       return Alert.alert("Ops!", "Você deve digitar um filme!");
     }
 
-    // Navega para a tela de resultados
-    router.push("/resultados");
+    // Navega para a tela de resultados, passando o filme digitado como parâmetro de rota
+    router.push(`/resultados?filme=${filme}`);
   };
 
   return (
