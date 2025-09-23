@@ -1,5 +1,5 @@
 // app/busca.tsx
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
@@ -23,6 +23,11 @@ export default function Busca() {
         </Text>
         <View style={estilos.viewForm}>
           <Ionicons name="film" size={44} />
+          <TextInput
+            placeholder="Digite o nome do filme"
+            style={estilos.campo}
+            inputMode="search"
+          />
         </View>
         <Button title="Procurar" color="#5451a6" />
       </SafeAreaView>
