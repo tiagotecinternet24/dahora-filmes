@@ -1,9 +1,12 @@
 // app/resultados.tsx
 import { StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Stack } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
+import { ParametrosBusca } from "../src/types";
 
 export default function Resultados() {
+  const { filme } = useLocalSearchParams<ParametrosBusca>();
+
   return (
     <>
       <Stack.Screen
@@ -14,8 +17,7 @@ export default function Resultados() {
 
       <SafeAreaView style={estilos.container}>
         <Text style={estilos.texto}>
-          Você buscou por:{" "}
-          <Text style={estilos.termo}>Filme a ser buscado...</Text>
+          Você buscou por: <Text style={estilos.termo}>{filme}</Text>
         </Text>
       </SafeAreaView>
     </>
