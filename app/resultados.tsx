@@ -1,5 +1,5 @@
 // app/resultados.tsx
-import { StyleSheet, Text } from "react-native";
+import { FlatList, StyleSheet, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { Filme, ParametrosBusca } from "@/src/types";
@@ -54,9 +54,12 @@ export default function Resultados() {
         {loading ? (
           <Loading />
         ) : (
-          resultados.map((resultado) => (
-            <Text key={resultado.id}>{resultado.title}</Text>
-          ))
+          <FlatList
+            data={resultados}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => <Text>{item.title}</Text>}
+            ListEmptyComponent={<Text>Nenhum filme encontrado!</Text>}
+          />
         )}
       </SafeAreaView>
     </>
