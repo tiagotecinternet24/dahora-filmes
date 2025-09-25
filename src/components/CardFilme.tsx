@@ -1,5 +1,5 @@
 // src/components/CardFilme.tsx
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
@@ -11,9 +11,19 @@ export default function CardFilme({ filme }: CardFilmeProps) {
 
   return (
     <View style={estilos.card}>
-      {/* Imagem do filme... */}
+      <Image
+        source={
+          // Se exister valor no poster_path, mostra imagem do filme
+          // Senão, mostra a foto alternativa
+          poster_path
+            ? { uri: `https://image.tmdb.org/t/p/original/${poster_path}` }
+            : require("@/assets/foto-alternativa.jpg")
+        }
+        style={estilos.imagem}
+      />
+
       <View style={estilos.corpo}>
-        <Text style={estilos.titulo}> Titulo do filme... </Text>
+        <Text style={estilos.titulo}> {title} </Text>
         <View style={estilos.botoes}>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
@@ -72,7 +82,7 @@ const estilos = StyleSheet.create({
     width: "100%",
   },
   botao: {
-    padding: 8,
+    padding: 4,
     borderWidth: 1,
     borderColor: "#5451a6",
     borderRadius: 4,
