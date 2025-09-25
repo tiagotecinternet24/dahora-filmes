@@ -9,3 +9,8 @@ export type Filme = {
   title: string;
   poster_path: string;
 };
+
+// Tipo para as props do componente CardFilme
+export type CardFilmeProps = {
+  filme: Filme;
+};
