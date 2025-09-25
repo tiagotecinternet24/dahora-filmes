@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { api } from "@/src/services/api";
 import Loading from "@/src/components/Loading";
 import CardFilme from "@/src/components/CardFilme";
+import ItemVazio from "@/src/components/ItemVazio";
 
 export default function Resultados() {
   const { filme } = useLocalSearchParams<ParametrosBusca>();
@@ -62,7 +63,7 @@ export default function Resultados() {
             numColumns={2}
             columnWrapperStyle={estilos.coluna}
             showsVerticalScrollIndicator={false}
-            ListEmptyComponent={<Text>Nenhum filme encontrado!</Text>}
+            ListEmptyComponent={ItemVazio}
           />
         )}
       </SafeAreaView>
