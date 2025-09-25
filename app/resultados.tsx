@@ -59,6 +59,9 @@ export default function Resultados() {
             data={resultados}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => <CardFilme filme={item} />}
+            numColumns={2}
+            columnWrapperStyle={estilos.coluna}
+            showsVerticalScrollIndicator={false}
             ListEmptyComponent={<Text>Nenhum filme encontrado!</Text>}
           />
         )}
