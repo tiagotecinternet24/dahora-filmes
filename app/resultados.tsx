@@ -5,6 +5,7 @@ import { Stack, useLocalSearchParams } from "expo-router";
 import { Filme, ParametrosBusca } from "@/src/types";
 import { useEffect, useState } from "react";
 import { api } from "@/src/services/api";
+import Loading from "@/src/components/Loading";
 
 export default function Resultados() {
   const { filme } = useLocalSearchParams<ParametrosBusca>();
@@ -49,6 +50,8 @@ export default function Resultados() {
         <Text style={estilos.texto}>
           Você buscou por: <Text style={estilos.termo}>{filme}</Text>
         </Text>
+
+        {loading ? <Loading /> : <Text>Busca finalizada!</Text>}
       </SafeAreaView>
     </>
   );
