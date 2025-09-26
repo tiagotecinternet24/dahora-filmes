@@ -5,8 +5,25 @@ import { Stack } from "expo-router";
 
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
+import { useEffect, useState } from "react";
+import { Filme } from "@/src/types";
+import { buscarFavoritos } from "@/src/services/storage-favoritos";
 
 export default function Favoritos() {
+  const [favoritos, setFavoritos] = useState<Filme[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    buscarFavoritos()
+      .then((lista) => {
+        setFavoritos(lista);
+      })
+      .catch((erro) => console.error("Erro ao carregar os filmes:" + erro))
+      .finally(() => setLoading(false));
+  }, []);
+
+  console.log(favoritos);
+
   const itemDaListaDeFavoritos = () => (
     <Pressable style={estilos.item}>
       <Text style={estilos.titulo}>Titulo...</Text>
