@@ -1,5 +1,12 @@
 // app/favoritos.tsx
-import { StyleSheet, Text, View, Pressable, Alert } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  Alert,
+  FlatList,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Stack } from "expo-router";
 
@@ -8,6 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
 import { Filme } from "@/src/types";
 import { buscarFavoritos } from "@/src/services/storage-favoritos";
+import Loading from "@/src/components/Loading";
 
 export default function Favoritos() {
   const [favoritos, setFavoritos] = useState<Filme[]>([]);
@@ -48,7 +56,21 @@ export default function Favoritos() {
           headerTitle: "Meus Favoritos",
         }}
       />
-      <SafeAreaView style={estilos.container}></SafeAreaView>
+      <SafeAreaView style={estilos.container}>
+        {loading ? (
+          <Loading />
+        ) : (
+          <View style={estilos.viewLista}>
+            <FlatList
+              data={favoritos}
+              keyExtractor={(item) => item.id.toString()}
+              showsVerticalScrollIndicator={false}
+              renderItem={itemDaListaDeFavoritos}
+              ListEmptyComponent={ListaVazia}
+            />
+          </View>
+        )}
+      </SafeAreaView>
     </>
   );
 }
