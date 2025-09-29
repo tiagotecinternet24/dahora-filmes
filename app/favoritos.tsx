@@ -13,7 +13,7 @@ import { Stack } from "expo-router";
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
-import { Filme } from "@/src/types";
+import { Filme, ItemDaListaDeFavoritosProps } from "@/src/types";
 import { buscarFavoritos } from "@/src/services/storage-favoritos";
 import Loading from "@/src/components/Loading";
 
@@ -32,9 +32,9 @@ export default function Favoritos() {
 
   console.log(favoritos);
 
-  const itemDaListaDeFavoritos = () => (
+  const itemDaListaDeFavoritos = ({ item }: ItemDaListaDeFavoritosProps) => (
     <Pressable style={estilos.item}>
-      <Text style={estilos.titulo}>Titulo...</Text>
+      <Text style={estilos.titulo}>{item.title}</Text>
       <Pressable style={estilos.botaoLixeira}>
         <Ionicons name="trash" size={24} color="#888" />
       </Pressable>
