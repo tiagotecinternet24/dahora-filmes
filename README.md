@@ -4,6 +4,18 @@ Aplicativo desenvolvido utilizando React Native com Expo.
 
 ---
 
+## 08_gerenciamento-de-favoritos
+
+- Instalação da lib `AsyncStorage`
+- Criação da tela de favoritos (básica)
+- Criação do service `storage-favoritos.ts` com as funções de manipulação do Storage (armazenamento físico no aparelho)
+- Carregamento dos dados com auxílio de useEffect
+- Exibição em FlatList
+- Uso de funções intermediárias em favoritos.tsx para acionar as funções do storage para salvar, apagar e apagarTudo.
+- Uso de Alert com botões Sim e Não para apagar todos os favoritos
+
+---
+
 ## 07_detalhes-do-filme
 
 - Criação de rota dinâmica: `app/detalhes/[id].tsx`
