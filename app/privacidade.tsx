@@ -1,6 +1,5 @@
 import { Stack } from "expo-router";
-import { Text, StyleSheet, ScrollView } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Text, StyleSheet, ScrollView, View } from "react-native";
 
 export default function Privacidade() {
   return (
@@ -10,7 +9,7 @@ export default function Privacidade() {
           headerTitle: "Política de Privacidade",
         }}
       />
-      <SafeAreaView style={estilos.container}>
+      <View style={estilos.container}>
         <ScrollView>
           <Text style={estilos.paragrafo}>
             A sua privacidade é de extrema importância para nós. Esta política
@@ -84,7 +83,7 @@ export default function Privacidade() {
             publicadas, você aceita a nova política.
           </Text>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     </>
   );
 }

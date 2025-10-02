@@ -12,7 +12,6 @@ import {
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
 import { Stack, useRouter } from "expo-router";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 
 export default function Busca() {
@@ -39,7 +38,7 @@ export default function Busca() {
           headerTitle: "Busca de Filmes",
         }}
       />
-      <SafeAreaView style={estilos.container}>
+      <View style={estilos.container}>
         <Text style={estilos.texto}>
           Star Trek? O Poderoso Chefão? A trilogia Senhor dos Anéis?
         </Text>
@@ -58,7 +57,7 @@ export default function Busca() {
           />
         </View>
         <Button title="Procurar" color="#5451a6" onPress={buscarFilmes} />
-      </SafeAreaView>
+      </View>
     </>
   );
 }

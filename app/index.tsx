@@ -3,10 +3,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 // @ts-ignore
 import { Ionicons } from "@expo/vector-icons";
 import { Link, Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 export default function index() {
   return (
     <>
+      <StatusBar style="dark" />
       <Stack.Screen options={{ headerShown: false, headerTitle: "Home" }} />
       <SafeAreaView style={estilos.container}>
         <View style={estilos.viewLogo}>
