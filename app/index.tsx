@@ -42,7 +42,7 @@ export default function index() {
           <Link href="/sobre" asChild>
             <Pressable style={estilos.botaoRodape}>
               <Ionicons name="information-circle" size={18} color="white" />
-              <Text style={estilos.textoBotao}> Sobre</Text>
+              <Text style={estilos.textoBotao}> Sobre o app</Text>
             </Pressable>
           </Link>
         </View>
@@ -79,7 +79,7 @@ const estilos = StyleSheet.create({
     alignItems: "flex-start",
   },
   botaoInicial: {
-    backgroundColor: "#5451a6",
+    backgroundColor: "#222",
     padding: 16,
     borderRadius: 8,
     flexDirection: "row",
